@@ -103,10 +103,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Performences tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.execution-mode=int:jit \
+    dalvik.vm.execution-mode=int:fast \
+    dalvik.vm.checkjni=false \
     dalvik.vm.heapsize=32m \
     ro.compcache.default=0 \
-    persist.sys.use_dithering=0
+    persist.sys.use_dithering=0 \
+    persist.sys.purgeable_assets = 1
 
 # OpenGL ES 1.1-CM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -169,5 +171,8 @@ PRODUCT_COPY_FILES += \
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, build/target/product/full.mk)
+$(call inherit-product, build/target/product/full_base.mk)
+
+PRODUCT_NAME := generic_desirec
+PRODUCT_DEVICE := desirec
 
