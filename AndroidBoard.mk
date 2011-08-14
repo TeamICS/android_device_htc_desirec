@@ -18,11 +18,5 @@ include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := eng
 LOCAL_SRC_FILES := desirec-keypad.kcm
 include $(BUILD_KEY_CHAR_MAP)
-        
-# the system properties for each device, loaded by init
-file := $(TARGET_OUT)/build.desirec.prop
-ALL_PREBUILT += $(file)
-$(file) : $(LOCAL_PATH)/build.desirec.prop | $(ACP)
-	$(transform-prebuilt-to-target)
 
 -include vendor/htc/desirec/AndroidBoardVendor.mk#
