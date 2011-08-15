@@ -130,3 +130,8 @@ service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
 service lights /system/xbin/lights.sh
     user root
     oneshot
+
+# script for dmportread fix
+service dmportread /system/xbin/dmportread.sh
+    user root
+    oneshot

@@ -27,7 +27,8 @@ PRODUCT_COPY_FILES += \
     device/htc/desirec/vold.fstab:system/etc/vold.fstab \
     device/htc/desirec/apns-conf.xml:system/etc/apns-conf.xml \
     device/htc/desirec/gps.conf:system/etc/gps.conf \
-    device/htc/desirec/lights.sh:system/xbin/lights.sh
+    device/htc/desirec/lights.sh:system/xbin/lights.sh \
+    device/htc/desirec/dmportread.sh:system/xbin/dmportread.sh
 
 # proprietary side of the device
 $(call inherit-product-if-exists, vendor/htc/desirec/device_desirec-vendor.mk)
