@@ -73,22 +73,16 @@ PRODUCT_COPY_FILES += \
     device/htc/desirec/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl
 
 PRODUCT_PROPERTY_OVERRIDES := \
-    keyguard.no_require_sim=true \
-    ro.media.dec.jpeg.memcap=10000000
+    ro.media.dec.jpeg.memcap=20000000
 
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/system/lib/libhtc_ril.so \
-    ro.ril.hsxpa=2 \
-    ro.ril.hsupa.category=5 \
-    ro.ril.enable.a52=1 \
-    ro.ril.enable.a53=1 \
     ro.ril.def.agps.mode=2 \
     ro.ril.def.agps.feature=1 \
-    ro.ril.gprsclass=12 \
     wifi.interface=tiwlan0
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    windowsmgr.max_events_per_sec= 60 \
+    windowsmgr.max_events_per_sec= 180 \
     windowsmgr.support_rotation_270=true
 
 # Time between scans in seconds. Keep it high to minimize battery drain.
@@ -105,7 +99,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Performences tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.execution-mode=int:fast \
-    dalvik.vm.checkjni=false \
     dalvik.vm.heapsize=32m \
     ro.compcache.default=0 \
     persist.sys.use_dithering=0 \
@@ -138,13 +131,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     settings.display.autobacklight=1 \
     persist.service.mount.playsnd = 0 \
-    ro.com.google.locationfeatures = 1 \
     ro.setupwizard.mode=OPTIONAL \
     ro.setupwizard.enable_bypass=1 \
     ro.media.dec.aud.wma.enabled=1 \
     ro.media.dec.vid.wmv.enabled=1 \
     dalvik.vm.dexopt-flags=m=y \
-    net.bt.name=Android \
     ro.config.sync=yes
 
 # media configuration xml file
