@@ -8,14 +8,14 @@ _HIST="$_DIR"'/history'
 log -p i -t dmportread "checking if dmportread directory exists";
 if [ ! -d $_DIR ]; then
   log -p i -t dmportread "directory does NOT exist...creating";
-  logwrapper mkdir $_DIR
-  logwrapper chown radio:radio $_DIR
-  logwrapper chmod 755 $_DIR
+  mkdir $_DIR
+  chown radio:radio $_DIR
+  chmod 755 $_DIR
 fi
 
 log -p i -t dmportread "making a new and empty history file";
 # if the history file exists already, clobber it
-logwrapper cp /dev/null $_HIST
-logwrapper chown radio:radio $_HIST
-logwrapper chmod 666 $_HIST
+cp /dev/null $_HIST
+chown radio:radio $_HIST
+chmod 666 $_HIST
 log -p i -t dmportread "done with dmportread fix";
