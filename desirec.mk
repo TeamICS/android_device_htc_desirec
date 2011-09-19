@@ -16,7 +16,7 @@
 
 DEVICE_PACKAGE_OVERLAYS := device/htc/desirec/overlay
 
-# Passion uses high-density artwork where available
+# DesireC uses medium-density artwork where available
 PRODUCT_LOCALES += mdpi
 
 # Publish that we support the live wallpaper feature.
@@ -27,6 +27,7 @@ PRODUCT_COPY_FILES += \
     device/htc/desirec/vold.fstab:system/etc/vold.fstab \
     device/htc/desirec/apns-conf.xml:system/etc/apns-conf.xml \
     device/htc/desirec/gps.conf:system/etc/gps.conf \
+    device/htc/desirec/sysctl.conf:system/etc/sysctl.conf \
     device/htc/desirec/lights.sh:system/xbin/lights.sh \
     device/htc/desirec/dmportread.sh:system/xbin/dmportread.sh
 
@@ -99,10 +100,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Performences tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.execution-mode=int:fast \
+    dalvik.vm.checkjni=false \
     dalvik.vm.heapsize=32m \
     ro.compcache.default=0 \
     persist.sys.use_dithering=0 \
-    persist.sys.purgeable_assets = 1
+    persist.sys.purgeable_assets=1
 
 # OpenGL ES 1.1-CM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -130,7 +132,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     settings.display.autobacklight=1 \
-    persist.service.mount.playsnd = 0 \
+    persist.service.mount.playsnd=0 \
     ro.setupwizard.mode=OPTIONAL \
     ro.setupwizard.enable_bypass=1 \
     ro.media.dec.aud.wma.enabled=1 \
