@@ -14,13 +14,5 @@
 # limitations under the License.
 #
 
-# This file is executed by build/envsetup.sh, and can use anything
-# defined in envsetup.sh.
-#
-# In particular, you can add lunch options with the add_lunch_combo
-# function: add_lunch_combo generic-eng
-
-#Uneeded for now since lunch set up by vendor/evervolv/vendorsetup.sh
-#add_lunch_combo full_desirec-userdebug
-#add_lunch_combo full_desirec-eng
-
+add_lunch_combo full_desirec-userdebug
+add_lunch_combo full_desirec-eng

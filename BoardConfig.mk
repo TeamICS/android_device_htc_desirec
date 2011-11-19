@@ -1,4 +1,5 @@
-# Copyright (C) 2007 The Android Open Source Project
+#
+# Copyright (C) 2011 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,18 +12,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# config.mk
 #
-# Product-specific compile-time definitions.
-#
-# WARNING: This line must come *before* including the proprietary
-# variant, so that it gets overwritten by the parent (which goes
-# against the traditional rules of inheritance).
+
+# This variable is set first, so it can be overridden
+# by BoardConfigVendor.mk
 USE_CAMERA_STUB := true
 
 # Fake building with eclair cam
 BOARD_USES_ECLAIR_LIBCAMERA := true
 
+# Use the non-open-source parts, if they're present
 -include vendor/htc/desirec/BoardConfigVendor.mk
 
 TARGET_BOARD_PLATFORM := msm7k
@@ -38,7 +37,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += TARGET_BOOTLOADER_BOARD_NAME=desirec
 # ARMv6-compatible processor rev 5 (v6l)
 TARGET_CPU_ABI := armeabi-v6j
 TARGET_CPU_ABI2 := armeabi
-TARGET_ARCH_VARIANT := armv6j
+TARGET_ARCH_VARIANT := armv5te
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
@@ -118,5 +117,5 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 TARGET_PREBUILT_KERNEL := device/htc/desirec/kernel
 
-PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP=$(TOP)/vendor/evervolv/prelink-linux-arm-heroc.map
+PRODUCT_SPECIFIC_DEFINES += TARGET_PRELINKER_MAP=$(TOP)/device/htc/desirec/prelink-linux-arm-desirec.map
 
