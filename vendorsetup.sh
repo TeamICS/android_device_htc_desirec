@@ -13,6 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-add_lunch_combo full_desirec-userdebug
-add_lunch_combo full_desirec-eng
+#
+#add_lunch_combo full_desirec-userdebug
+#add_lunch_combo full_desirec-eng
