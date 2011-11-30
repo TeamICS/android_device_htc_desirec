@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-$(call inherit-product-if-exists, vendor/htc/desirec/device-vendor.mk)
-
 DEVICE_PACKAGE_OVERLAYS := device/htc/desirec/overlay
 
 # DesireC uses medium-density artwork where available
@@ -35,6 +33,7 @@ PRODUCT_PACKAGES += \
     librs_jni \
     sensors.desirec \
     lights.desirec \
+    lights.msm7k \
     audio.primary.msm7k \
     audio_policy.msm7k \
     copybit.msm7k \
@@ -42,18 +41,11 @@ PRODUCT_PACKAGES += \
     wlan_loader \
     tiwlan.ini \
     dhcpcd.conf \
-    VoiceDialer \
     libOmxCore \
     libOmxVidEnc \
     libmm-omxcore \
-    desirec-keypad.kcm
-
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    VisualizationWallpapers \
-    librs_jni
+    desirec-keypad.kcm \
+    com.android.future.usb.accessory
 
 # Install the features available on this device.
 PRODUCT_COPY_FILES += \
@@ -66,7 +58,8 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
+    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
+    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
@@ -142,7 +135,4 @@ PRODUCT_COPY_FILES += \
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, build/target/product/full_base.mk)
-
-PRODUCT_NAME := generic_desirec
-PRODUCT_DEVICE := desirec
+$(call inherit-product-if-exists, vendor/htc/desirec/device-vendor.mk)
