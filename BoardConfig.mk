@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Allow compatibility with old touchscreens
+BOARD_USE_LEGACY_TOUCHSCREEN := true
+
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
 USE_CAMERA_STUB := true
@@ -37,7 +40,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += TARGET_BOOTLOADER_BOARD_NAME=desirec
 # ARMv6-compatible processor rev 5 (v6l)
 TARGET_CPU_ABI := armeabi-v6j
 TARGET_CPU_ABI2 := armeabi
-TARGET_ARCH_VARIANT := armv5te
+TARGET_ARCH_VARIANT := armv6j
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
