@@ -1,16 +1,16 @@
-key 231   CALL              WAKE_DROPPED
-key 107   ENDCALL           WAKE_DROPPED
-key 143   MENU              WAKE   # wake-up key
-key 115   VOLUME_UP         WAKE_DROPPED
-key 114   VOLUME_DOWN       WAKE
+key 231   CALL
+key 107   ENDCALL           WAKE
+key 143   MENU              WAKE_DROPPED
+key 115   VOLUME_UP
+key 114   VOLUME_DOWN
 
 #
 # virtual keys
 #
 
-key 139   MENU
+key 139   MENU              WAKE_DROPPED
 key 102   HOME
-key 158   BACK
+key 158   BACK              WAKE_DROPPED
 key 217   SEARCH
 
 ##### unuse #####################
